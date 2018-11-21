@@ -21,13 +21,14 @@
  */
 
 function mario() {
+height = prompt ("Please enter a number between 1 and 23: ");
 
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-  
+
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
