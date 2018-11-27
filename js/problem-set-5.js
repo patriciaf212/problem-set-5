@@ -21,14 +21,22 @@
  */
 
 function mario() {
-height = prompt ("Please enter a number between 1 and 23: ");
+
 
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
+  height = prompt ("Please enter a number between 1 and 23: ");
+    while (height > 1 || height < 23) {
+      height = prompt ("Please enter a number between 1 and 23: ");
+    }
 
+    var p = document.getElementById("mario-easy-output")
+   while (height > 1 || height < 23){
+
+   }
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -190,7 +198,17 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+windspeed = prompt ("Please Enter a windpeed: ");
 
+var a = document.getElementById ("hurricane-output")
+
+ if (w >= 157) {
+  a.innerHTML = "Hurricane Category: Category 5";
+} else if (w < 156 && x > 130) {
+ //category 4
+} else if (w < 129 && w > 111) {
+//category 3
+}
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
