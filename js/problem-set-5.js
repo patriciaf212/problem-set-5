@@ -32,11 +32,12 @@ function mario() {
     while (height > 1 || height < 23) {
       height = prompt ("Please enter a number between 1 and 23: ");
     }
-
+    for (height = 1; height < 23; height++){
+      p.innerHTML = 
+    }
     var p = document.getElementById("mario-easy-output")
-   while (height > 1 || height < 23){
+  height = Number(height);
 
-   }
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -71,6 +72,10 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+  height = prompt ("Please enter a number between 1 and 23: ");
+    while (height > 1 || height < 23) {
+      height = prompt ("Please enter a number between 1 and 23: ");
+    }
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
@@ -124,6 +129,10 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+  card = prompt ("Please Enter A Credit Card Number: ")
+
+  var p = document.getElementById("credit-output");
+
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -168,7 +177,9 @@ function guess() {
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
 }
+card = prompt ("Try and Guess the Number: ")
 
+var p = document.getElementById("guess-output");
 /*
  * Hurricane. 5 points.
  *
@@ -199,16 +210,29 @@ function hurricane() {
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
 windspeed = prompt ("Please Enter a windpeed: ");
-
-var a = document.getElementById ("hurricane-output")
-
- if (w >= 157) {
-  a.innerHTML = "Hurricane Category: Category 5";
-} else if (w < 156 && x > 130) {
- //category 4
-} else if (w < 129 && w > 111) {
-//category 3
+while (windspeed > 0 || windspeed % 1 != 0){
+  windspeed = prompt ("Please Enter a windpeed: ");
 }
+
+var p = document.getElementById("hurricane-output")
+
+ if (windspeed >= 157) {
+  p.innerHTML = ("Hurricane Category 5.");
+} else if (windspeed <= 156 && windspeed >= 130) {
+  p.innerHTML = ("Hurricane Category 4.");
+} else if (windspeed <= 129 && windspeed >= 111) {
+  p.innerHTML = ("Hurricane Category 3.");
+} else if (windspeed <= 110 && windspeed >= 96){
+  p.innerHTML = ("Hurricane Category 2.");
+} else if (windspeed <= 95 && windspeed >= 74){
+  p.innerHTML = ("Hurricane Cateogry 1.");
+} else if (windspeed <= 73 && windspeed >= 39){
+  p.innerHTML = ("Tropical Storm.");
+} else if (windspeed <= 38){
+  p.innerHTML = ("The skies are calm...");
+}
+
+windspeed = Number(windspeed);
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
@@ -239,6 +263,10 @@ function gymnastics() {
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
 
+scores = prompt ("Please Enter Six Scores: ")
+
+
+var p = document.getElementById("gymnastics-result");
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
    *       six of the judges' scores.
