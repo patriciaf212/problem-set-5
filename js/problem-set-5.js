@@ -28,15 +28,28 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-  height = prompt ("Please enter a number between 1 and 23: ");
-    while (height > 1 || height < 23) {
-      height = prompt ("Please enter a number between 1 and 23: ");
+ var div = document.getElementById("mario-easy-output");
+
+  while (height < 1 || height > 23 || Number.isInteger(height)==false) {
+    height = Number(prompt("Enter a number between 1 and 23."));
+  }
+
+  let i = 0;
+  let rows = "";
+  let h = "#";
+  let space = "&nbsp";
+
+  while (i <height) {
+    for(let h3 = 0; h3 <=(height-2-i);h3++) {
+      rows = rows + space;
     }
-    for (height = 1; height < 23; height++){
-      p.innerHTML = 
+    for(let h4 = 0; h4<=(1+i);h4++) {
+      rows = rows + h;
     }
-    var p = document.getElementById("mario-easy-output")
-  height = Number(height);
+      rows = rows + "</br>";
+      i++
+  }
+  div.innerHTML = "<code>" + rows + "</code";
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -170,16 +183,15 @@ function credit() {
  */
 
 function guess() {
+  card = prompt ("Try and Guess the Number: ")
 
-  // WRITE YOUR EXERCISE 4 CODE HERE
+  var p = document.getElementById("guess-output");
 
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
 }
-card = prompt ("Try and Guess the Number: ")
 
-var p = document.getElementById("guess-output");
 /*
  * Hurricane. 5 points.
  *
@@ -210,22 +222,22 @@ function hurricane() {
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
 windspeed = prompt ("Please Enter a windpeed: ");
-while (windspeed > 0 || windspeed % 1 != 0){
+while (windspeed < 0 || windspeed % 1 != 0){
   windspeed = prompt ("Please Enter a windpeed: ");
 }
 
 var p = document.getElementById("hurricane-output")
 
  if (windspeed >= 157) {
-  p.innerHTML = ("Hurricane Category 5.");
+  p.innerHTML = ("Category 5 Hurricane.");
 } else if (windspeed <= 156 && windspeed >= 130) {
-  p.innerHTML = ("Hurricane Category 4.");
+  p.innerHTML = ("Category 4 Hurricane.");
 } else if (windspeed <= 129 && windspeed >= 111) {
-  p.innerHTML = ("Hurricane Category 3.");
+  p.innerHTML = ("Category 3 Hurricane.");
 } else if (windspeed <= 110 && windspeed >= 96){
-  p.innerHTML = ("Hurricane Category 2.");
+  p.innerHTML = ("Category 2 Hurricane.");
 } else if (windspeed <= 95 && windspeed >= 74){
-  p.innerHTML = ("Hurricane Cateogry 1.");
+  p.innerHTML = ("Category 1 Hurricane.");
 } else if (windspeed <= 73 && windspeed >= 39){
   p.innerHTML = ("Tropical Storm.");
 } else if (windspeed <= 38){
@@ -263,10 +275,41 @@ function gymnastics() {
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
 
-scores = prompt ("Please Enter Six Scores: ")
+  do {
+    s1 = Number(prompt("Please enter a score."));
+  } while (s1 < 0.0 || s1 > 10.0 || !Number.isInteger(s1));
+  scores.push(s1);
 
+  do {
+    s2 = Number(prompt("Please enter a score."));
+  } while (s2 < 0.0 || s2 > 10.0 || !Number.isInteger(s2));
+  scores.push(s2);
 
-var p = document.getElementById("gymnastics-result");
+  do {
+    s3 = Number(prompt("Please enter a score."));
+  } while (s3 < 0.0 || s3 > 10.0 || !Number.isInteger(s3));
+  scores.push(s3);
+
+  do {
+    s4 = Number(prompt("Please enter a score."));
+  } while (s4 < 0.0 || s4 > 10.0 || !Number.isInteger(s4));
+  scores.push(s4);
+
+  do {
+    s5 = Number(prompt("Please enter a score."));
+  } while (s5 < 0.0 || s5 > 10.0 || !Number.isInteger(s5));
+  scores.push(s5);
+
+  do {
+    s6 = Number(prompt("Please enter a score."));
+  } while (s6 < 0.0 || s6 >10.0 || !Number.isInteger(s6));
+  scores.push(s6);
+
+let Total = Number(s1) + Number(s2) + Number(s3) + Number(s4) + Number(s5) + Number(s6);
+let average = (Total - Math.max(s1, s2, s3, s4, s5, s6) - Math.min(s1, s2, s3, s4, s5, s6)) / 4;
+var p = document.getElementById("gymnastics-output");
+p.innerHTML = "Discarded: " + Math.min(s1, s2, s3,  s4, s5, s6) + ", " + Math.max(s1, s2, s3, s4, s5, s6) + "</br>" + "Score: " + average.toFixed(2);
+
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
    *       six of the judges' scores.
