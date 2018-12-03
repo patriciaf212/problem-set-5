@@ -85,10 +85,29 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-  height = prompt ("Please enter a number between 1 and 23: ");
-    while (height > 1 || height < 23) {
-      height = prompt ("Please enter a number between 1 and 23: ");
+ var div = document.getElementById("mario-easy-output");
+
+  while (height < 1 || height > 23 || Number.isInteger(height)==false) {
+    height = Number(prompt("Enter a number between 1 and 23."));
+  }
+
+  let i = 0;
+  let rows = "";
+  let h = "#";
+  let space = "&nbsp";
+
+  while (i <height) {
+    for(let h3 = 0; h3 <=(height-2-i);h3++) {
+      rows = rows + space;
     }
+    for(let h4 = 0; h4<=(1+i);h4++) {
+      rows = rows + h;
+    }
+      rows = rows + "</br>";
+      i++
+  }
+  div.innerHTML = "<code>" + rows + "</code";
+
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
