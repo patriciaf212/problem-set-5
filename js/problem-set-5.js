@@ -106,6 +106,12 @@ function marioAgain() {
       rows = rows + "</br>";
       i++
   }
+  row = row+"&nbsp;&nbsp;#"
+  for (let h5 = 0; h5 < (h+1); h5++){
+    row = row+"#";
+  }
+  rows = total +row+"<br/>"
+
   div.innerHTML = "<code>" + rows + "</code";
 
 
